@@ -111,6 +111,17 @@ This project helped practice:
 
 ---
 
+Frontend (Vercel)
+https://your-app.vercel.app
+          │
+          │ fetch()
+          ▼
+Backend (Render)
+https://student-management-system-3lpo.onrender.com
+          │
+          ▼
+Express API
+
 ## ⚠️ Current Limitation
 
 Student data is stored in **memory**, so all data is lost whenever the server restarts.
