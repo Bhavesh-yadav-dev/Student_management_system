@@ -111,11 +111,28 @@ This project helped practice:
 
 ---
 
+### 🌐 Architecture Overview
+
+Below is the layout showing how the frontend interface interacts with the live backend server:
+
+```text
+Frontend (Vercel)
+[https://your-app.vercel.app](https://your-app.vercel.app)
+          │
+          │ fetch()
+          ▼
+Backend (Render)
+[https://student-management-system-3lpo.onrender.com](https://student-management-system-3lpo.onrender.com)
+          │
+          ▼
+Express API
+
 ## ⚠️ Current Limitation
 
 Student data is stored in **memory**, so all data is lost whenever the server restarts.
 
 ---
+
 
 ## 🔮 Future Improvements
 
