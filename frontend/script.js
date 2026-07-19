@@ -2,12 +2,13 @@ const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const submitBtn = document.getElementById("submitBtn");
 const result = document.getElementById("result");
+const API_URL = "https://student-management-system-3lpo.onrender.com";
 let editId = null;
 
 // --- 1. DISPLAY LOGIC ---
 async function displayStudents() {
   try {
-    const response = await fetch("http://127.0.0.1:8000/students");
+    const response = await fetch(`${API_URL}/students`)
     const students = await response.json();
 
     result.innerHTML = "";
@@ -51,7 +52,7 @@ async function addStudent() {
   }
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/students", {
+    const response = await fetch(`${API_URL}/students`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -76,7 +77,7 @@ async function addStudent() {
 }
 
 async function deleteStudent(id) {
-  const response = await fetch(`http://127.0.0.1:8000/students/${id}`, {
+  const response = await fetch(`${API_URL}/students/${id}`, {
     method: "DELETE",
   });
 
@@ -86,7 +87,7 @@ async function deleteStudent(id) {
 }
 
 async function editStudent(id) {
-  const response = await fetch(`http://127.0.0.1:8000/students/${id}`);
+  const response = await fetch(`${API_URL}/students/${id}`);
 
   const student = await response.json();
 
@@ -105,7 +106,7 @@ async function updateStudent() {
   const name = nameInput.value;
   const email = emailInput.value;
 
-  const response = await fetch(`http://127.0.0.1:8000/students/${editId}`, {
+  const response = await fetch(`${API_URL}/students/${editId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
